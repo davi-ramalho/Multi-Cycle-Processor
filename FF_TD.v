@@ -1,0 +1,11 @@
+module FF_TD(input clk, rst, input [7:0] In, output reg [7:0] Out);
+
+always @(posedge clk or negedge rst) begin
+		if (!rst) begin
+			Out <= 8'b00000000;
+			end
+		else begin
+			Out <= In;
+			end
+		end
+endmodule

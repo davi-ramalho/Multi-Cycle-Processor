@@ -1,0 +1,16 @@
+module IM(input [7:0] A, output[32:0] RD);
+
+always @(*) 
+	case (A)
+		8'h00 : RD = 0f300093;
+		8'h04 : RD = 00900113;
+		8'h08 : RD = 00208133;
+		8'h0C : RD = 0020f1b3;
+		8'h10 : RD = 0020e233;
+		8'h14 : RD = 0040c2b3;
+		8'h18 : RD = 0041a333;
+		8'h1C : RD = 406203b3;
+		default : RD = 32'bx;
+	endcase		
+	
+endmodule

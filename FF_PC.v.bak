@@ -1,0 +1,11 @@
+FF_PC(input clk, rst, PCWrite, input [31:0] PCnew, output reg [31:0] PC);
+
+always @(posedge clk or negedge rst) begin
+		if (!rst) begin
+			PC <= 32'hFFFFFFFF;
+			end
+		else if (PCWrite) begin
+			PC <= newPC;
+			end
+		end
+endmodule

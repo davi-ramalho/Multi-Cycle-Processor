@@ -1,0 +1,5 @@
+module top_module(input [7:0] i0(SW[7:0]), i1(SW[15:8]), input sel(SW[17]), output [7:0] out);
+
+assign out = sel ? i1 : i0;
+
+endmodule

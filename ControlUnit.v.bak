@@ -1,0 +1,21 @@
+module ControlUnit(input [6:0] OP, input [2:0] Funct3, input [6:0] Funct7, output RegWrite, output ULASrc, output [2:0] ULAControl);
+
+assign RegWrite = (OP == 7'b0110011) || (OP == 7'b0010011);
+assign ULASrc = (OP == 7'b0010011);
+
+assign ULAControl = 3'b000;
+
+always @(*) begin
+    case({OP, Funct3, Funct7})
+        7'b0110011_000_0000000: ULAControl = 3'b000;
+        7'0110011_000_0100000: ULAControl = 3'b001;
+        7'b0110011_111_0000000: ULAControl = 3'b010;
+        7'b0110011_110_0000000: ULAControl = 3'b011;
+        7'0110011_100_0000000: ULAControl = 3'b100;
+        7'b0110011_010_0000000: ULAControl = 3'b101;
+        7'b0010011_000_xxxxxxx: ULAControl = 3'b000;
+        default: ULAControl = 3'b000; // Caso padrão
+    endcase
+end
+
+endmodule

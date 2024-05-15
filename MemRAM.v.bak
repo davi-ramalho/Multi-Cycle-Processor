@@ -1,0 +1,20 @@
+module MemRAM (input clk, input [7:0] A, input [7:0] WD, input WE, output reg [7:0] RD);
+
+reg [7:0] memoria [0:255];
+parameter i;
+
+always @(posedge clk or negedge rst) begin
+    if(!rst)begin
+		for(i = 0; i < 256; i = i + 1) begin
+			memoria[i] <= 0;
+			end
+		end	
+		
+	 if (WE)begin
+        memoria[A] <= WD; 
+    end else begin
+        RD <= memoria[A];
+		  end
+end
+
+endmodule
