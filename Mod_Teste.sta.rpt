@@ -1,0 +1,1089 @@
+TimeQuest Timing Analyzer report for Mod_Teste
+Tue May 14 20:25:59 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clock'
+ 12. Slow Model Hold: 'clock'
+ 13. Slow Model Minimum Pulse Width: 'clock'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clock'
+ 24. Fast Model Hold: 'clock'
+ 25. Fast Model Minimum Pulse Width: 'clock'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Mod_Teste                                                         ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 73.44 MHz ; 73.44 MHz       ; clock      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clock ; -12.616 ; -21755.080    ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.578 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.380 ; -2170.380             ;
++-------+--------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock'                                                                                                                                     ;
++---------+-------------------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                 ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-------------------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -12.616 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.019     ; 13.633     ;
+; -12.573 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.019     ; 13.590     ;
+; -12.513 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.025     ; 13.524     ;
+; -12.470 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.025     ; 13.481     ;
+; -12.421 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.019     ; 13.438     ;
+; -12.324 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[2]               ; clock        ; clock       ; 1.000        ; -0.029     ; 13.331     ;
+; -12.318 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.025     ; 13.329     ;
+; -12.311 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.019     ; 13.328     ;
+; -12.285 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.029     ; 13.292     ;
+; -12.281 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[2]               ; clock        ; clock       ; 1.000        ; -0.029     ; 13.288     ;
+; -12.270 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[7]               ; clock        ; clock       ; 1.000        ; 0.004      ; 13.310     ;
+; -12.242 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.029     ; 13.249     ;
+; -12.227 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[7]               ; clock        ; clock       ; 1.000        ; 0.004      ; 13.267     ;
+; -12.208 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.025     ; 13.219     ;
+; -12.177 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.029     ; 13.184     ;
+; -12.133 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[0]               ; clock        ; clock       ; 1.000        ; -0.026     ; 13.143     ;
+; -12.129 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[2]               ; clock        ; clock       ; 1.000        ; -0.029     ; 13.136     ;
+; -12.128 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[1]               ; clock        ; clock       ; 1.000        ; 0.004      ; 13.168     ;
+; -12.120 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[4]               ; clock        ; clock       ; 1.000        ; -0.018     ; 13.138     ;
+; -12.090 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[7]               ; clock        ; clock       ; 1.000        ; 0.004      ; 13.130     ;
+; -12.090 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[0]               ; clock        ; clock       ; 1.000        ; -0.026     ; 13.100     ;
+; -12.085 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[1]               ; clock        ; clock       ; 1.000        ; 0.004      ; 13.125     ;
+; -12.077 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[4]               ; clock        ; clock       ; 1.000        ; -0.018     ; 13.095     ;
+; -12.020 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.029     ; 13.027     ;
+; -12.020 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[1]               ; clock        ; clock       ; 1.000        ; 0.004      ; 13.060     ;
+; -12.019 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[2]               ; clock        ; clock       ; 1.000        ; -0.029     ; 13.026     ;
+; -11.982 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[0]               ; clock        ; clock       ; 1.000        ; -0.026     ; 12.992     ;
+; -11.965 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[7]               ; clock        ; clock       ; 1.000        ; 0.004      ; 13.005     ;
+; -11.954 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[4]               ; clock        ; clock       ; 1.000        ; -0.018     ; 12.972     ;
+; -11.912 ; FF_IR:ffir|Inst[20]                       ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.016     ; 12.932     ;
+; -11.900 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[253][2] ; clock        ; clock       ; 1.000        ; -0.054     ; 12.882     ;
+; -11.863 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[1]               ; clock        ; clock       ; 1.000        ; 0.004      ; 12.903     ;
+; -11.859 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[193][4] ; clock        ; clock       ; 1.000        ; -0.018     ; 12.877     ;
+; -11.857 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[253][2] ; clock        ; clock       ; 1.000        ; -0.054     ; 12.839     ;
+; -11.828 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[0]               ; clock        ; clock       ; 1.000        ; -0.026     ; 12.838     ;
+; -11.816 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[193][4] ; clock        ; clock       ; 1.000        ; -0.018     ; 12.834     ;
+; -11.815 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[4]               ; clock        ; clock       ; 1.000        ; -0.018     ; 12.833     ;
+; -11.809 ; FF_IR:ffir|Inst[20]                       ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.022     ; 12.823     ;
+; -11.718 ; FF_IR:ffir|Inst[20]                       ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.026     ; 12.728     ;
+; -11.705 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[253][2] ; clock        ; clock       ; 1.000        ; -0.054     ; 12.687     ;
+; -11.701 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[25][7]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.719     ;
+; -11.701 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[25][1]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.719     ;
+; -11.701 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[25][0]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.719     ;
+; -11.701 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[25][4]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.719     ;
+; -11.693 ; FF_PC:ffpc|PC[6]                          ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.031     ; 12.698     ;
+; -11.681 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[55][5]  ; clock        ; clock       ; 1.000        ; -0.038     ; 12.679     ;
+; -11.681 ; FF_IR:ffir|Inst[0]                        ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.016     ; 12.701     ;
+; -11.676 ; FF_PC:ffpc|PC[0]                          ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.012     ; 12.700     ;
+; -11.664 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[193][4] ; clock        ; clock       ; 1.000        ; -0.018     ; 12.682     ;
+; -11.658 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[25][7]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.676     ;
+; -11.658 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[25][1]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.676     ;
+; -11.658 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[25][0]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.676     ;
+; -11.658 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[25][4]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.676     ;
+; -11.657 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[193][5] ; clock        ; clock       ; 1.000        ; -0.040     ; 12.653     ;
+; -11.643 ; FF_IR:ffir|Inst[9]                        ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.012     ; 12.667     ;
+; -11.639 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[217][1] ; clock        ; clock       ; 1.000        ; -0.018     ; 12.657     ;
+; -11.638 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[55][5]  ; clock        ; clock       ; 1.000        ; -0.038     ; 12.636     ;
+; -11.631 ; FF_PC:ffpc|PC[2]                          ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.022     ; 12.645     ;
+; -11.631 ; FF_IR:ffir|Inst[20]                       ; FF_TD:ffdata|Out[7]               ; clock        ; clock       ; 1.000        ; 0.007      ; 12.674     ;
+; -11.620 ; FF_IR:ffir|Inst[20]                       ; FF_TD:ffdata|Out[2]               ; clock        ; clock       ; 1.000        ; -0.026     ; 12.630     ;
+; -11.614 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[193][5] ; clock        ; clock       ; 1.000        ; -0.040     ; 12.610     ;
+; -11.606 ; FF_PC:ffpc|PC[6]                          ; FF_TD:ffdata|Out[7]               ; clock        ; clock       ; 1.000        ; 0.002      ; 12.644     ;
+; -11.596 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[217][1] ; clock        ; clock       ; 1.000        ; -0.018     ; 12.614     ;
+; -11.595 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; MemRAM:DataMemory|memoria[253][2] ; clock        ; clock       ; 1.000        ; -0.054     ; 12.577     ;
+; -11.578 ; FF_IR:ffir|Inst[0]                        ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.022     ; 12.592     ;
+; -11.573 ; FF_PC:ffpc|PC[0]                          ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.018     ; 12.591     ;
+; -11.573 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[55][5]  ; clock        ; clock       ; 1.000        ; -0.038     ; 12.571     ;
+; -11.561 ; FF_IR:ffir|Inst[20]                       ; FF_TD:ffdata|Out[1]               ; clock        ; clock       ; 1.000        ; 0.007      ; 12.604     ;
+; -11.554 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; MemRAM:DataMemory|memoria[193][4] ; clock        ; clock       ; 1.000        ; -0.018     ; 12.572     ;
+; -11.544 ; FF_PC:ffpc|PC[2]                          ; FF_TD:ffdata|Out[7]               ; clock        ; clock       ; 1.000        ; 0.011      ; 12.591     ;
+; -11.540 ; FF_IR:ffir|Inst[9]                        ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.018     ; 12.558     ;
+; -11.536 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[177][1] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.559     ;
+; -11.536 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[177][3] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.559     ;
+; -11.536 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[177][6] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.559     ;
+; -11.536 ; FF_PC:ffpc|PC[6]                          ; FF_TD:ffdata|Out[1]               ; clock        ; clock       ; 1.000        ; 0.002      ; 12.574     ;
+; -11.521 ; FF_IR:ffir|Inst[20]                       ; FF_TD:ffdata|Out[0]               ; clock        ; clock       ; 1.000        ; -0.023     ; 12.534     ;
+; -11.516 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[204][6] ; clock        ; clock       ; 1.000        ; -0.048     ; 12.504     ;
+; -11.516 ; FF_PC:ffpc|PC[2]                          ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.012     ; 12.540     ;
+; -11.511 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[96][2]  ; clock        ; clock       ; 1.000        ; -0.013     ; 12.534     ;
+; -11.511 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[96][4]  ; clock        ; clock       ; 1.000        ; -0.013     ; 12.534     ;
+; -11.511 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[96][6]  ; clock        ; clock       ; 1.000        ; -0.013     ; 12.534     ;
+; -11.506 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[25][7]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.524     ;
+; -11.506 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[25][1]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.524     ;
+; -11.506 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[25][0]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.524     ;
+; -11.506 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[25][4]  ; clock        ; clock       ; 1.000        ; -0.018     ; 12.524     ;
+; -11.496 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[133][5] ; clock        ; clock       ; 1.000        ; -0.018     ; 12.514     ;
+; -11.493 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[177][1] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.516     ;
+; -11.493 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[177][3] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.516     ;
+; -11.493 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[177][6] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.516     ;
+; -11.487 ; FF_IR:ffir|Inst[0]                        ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.026     ; 12.497     ;
+; -11.483 ; FF_IR:ffir|Inst[20]                       ; FF_TD:ffdata|Out[4]               ; clock        ; clock       ; 1.000        ; -0.015     ; 12.504     ;
+; -11.474 ; FF_PC:ffpc|PC[2]                          ; FF_TD:ffdata|Out[1]               ; clock        ; clock       ; 1.000        ; 0.011      ; 12.521     ;
+; -11.473 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[26][7]  ; clock        ; clock       ; 1.000        ; -0.010     ; 12.499     ;
+; -11.473 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[204][6] ; clock        ; clock       ; 1.000        ; -0.048     ; 12.461     ;
+; -11.470 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[11][1]  ; clock        ; clock       ; 1.000        ; -0.023     ; 12.483     ;
+; -11.468 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[96][2]  ; clock        ; clock       ; 1.000        ; -0.013     ; 12.491     ;
+; -11.468 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[96][4]  ; clock        ; clock       ; 1.000        ; -0.013     ; 12.491     ;
+; -11.468 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[96][6]  ; clock        ; clock       ; 1.000        ; -0.013     ; 12.491     ;
+; -11.462 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[193][5] ; clock        ; clock       ; 1.000        ; -0.040     ; 12.458     ;
+; -11.461 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[3][1]   ; clock        ; clock       ; 1.000        ; -0.023     ; 12.474     ;
++---------+-------------------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock'                                                                                                                                            ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.578 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; ControlUnit:UnidadeDeControle|fsmstate[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.844      ;
+; 0.667 ; FF_PC:ffpc|PC[5]                          ; FF_IR:ffir|PCold[5]                       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.933      ;
+; 0.673 ; FF_PC:ffpc|PC[7]                          ; FF_IR:ffir|PCold[7]                       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.939      ;
+; 0.784 ; registrador:RegFile|rgf[3][7]             ; FF_TD_2:ffreg|Out2[7]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.050      ;
+; 0.850 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; ControlUnit:UnidadeDeControle|fsmstate[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.116      ;
+; 0.899 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[102][1]         ; clock        ; clock       ; 0.000        ; -0.001     ; 1.164      ;
+; 0.901 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[98][1]          ; clock        ; clock       ; 0.000        ; -0.001     ; 1.166      ;
+; 0.997 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[148][1]         ; clock        ; clock       ; 0.000        ; -0.005     ; 1.258      ;
+; 1.019 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[102][7]         ; clock        ; clock       ; 0.000        ; -0.001     ; 1.284      ;
+; 1.022 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[78][7]          ; clock        ; clock       ; 0.000        ; -0.001     ; 1.287      ;
+; 1.065 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[25][0]          ; clock        ; clock       ; 0.000        ; -0.015     ; 1.316      ;
+; 1.077 ; FF_PC:ffpc|PC[1]                          ; FF_IR:ffir|PCold[1]                       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.343      ;
+; 1.079 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[44][6]          ; clock        ; clock       ; 0.000        ; 0.006      ; 1.351      ;
+; 1.086 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[172][6]         ; clock        ; clock       ; 0.000        ; 0.006      ; 1.358      ;
+; 1.093 ; registrador:RegFile|rgf[3][5]             ; FF_TD_2:ffreg|Out2[5]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.359      ;
+; 1.095 ; registrador:RegFile|rgf[3][1]             ; FF_TD_2:ffreg|Out2[1]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.361      ;
+; 1.117 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[132][3]         ; clock        ; clock       ; 0.000        ; -0.001     ; 1.382      ;
+; 1.121 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[164][3]         ; clock        ; clock       ; 0.000        ; -0.001     ; 1.386      ;
+; 1.124 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[133][3]         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.390      ;
+; 1.130 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[133][2]         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.396      ;
+; 1.133 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[108][1]         ; clock        ; clock       ; 0.000        ; 0.004      ; 1.403      ;
+; 1.161 ; FF_PC:ffpc|PC[3]                          ; FF_IR:ffir|PCold[3]                       ; clock        ; clock       ; 0.000        ; -0.002     ; 1.425      ;
+; 1.161 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[164][0]         ; clock        ; clock       ; 0.000        ; -0.001     ; 1.426      ;
+; 1.170 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[132][2]         ; clock        ; clock       ; 0.000        ; -0.001     ; 1.435      ;
+; 1.170 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[50][2]          ; clock        ; clock       ; 0.000        ; -0.029     ; 1.407      ;
+; 1.171 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[174][1]         ; clock        ; clock       ; 0.000        ; -0.001     ; 1.436      ;
+; 1.172 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[190][1]         ; clock        ; clock       ; 0.000        ; -0.001     ; 1.437      ;
+; 1.186 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[32][6]          ; clock        ; clock       ; 0.000        ; 0.009      ; 1.461      ;
+; 1.188 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[36][6]          ; clock        ; clock       ; 0.000        ; 0.009      ; 1.463      ;
+; 1.192 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[34][1]          ; clock        ; clock       ; 0.000        ; 0.011      ; 1.469      ;
+; 1.193 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[174][6]         ; clock        ; clock       ; 0.000        ; 0.006      ; 1.465      ;
+; 1.194 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[192][2]         ; clock        ; clock       ; 0.000        ; -0.029     ; 1.431      ;
+; 1.196 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[46][6]          ; clock        ; clock       ; 0.000        ; 0.006      ; 1.468      ;
+; 1.206 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[32][1]          ; clock        ; clock       ; 0.000        ; 0.009      ; 1.481      ;
+; 1.207 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[36][1]          ; clock        ; clock       ; 0.000        ; 0.009      ; 1.482      ;
+; 1.208 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[1][1]           ; clock        ; clock       ; 0.000        ; 0.011      ; 1.485      ;
+; 1.208 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[65][1]          ; clock        ; clock       ; 0.000        ; 0.011      ; 1.485      ;
+; 1.265 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[233][3]         ; clock        ; clock       ; 0.000        ; -0.022     ; 1.509      ;
+; 1.282 ; registrador:RegFile|rgf[3][2]             ; FF_TD_2:ffreg|Out1[2]                     ; clock        ; clock       ; 0.000        ; 0.006      ; 1.554      ;
+; 1.283 ; FF_IR:ffir|Inst[21]                       ; FF_TD_2:ffreg|Out2[4]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.549      ;
+; 1.312 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[167][0]         ; clock        ; clock       ; 0.000        ; 0.005      ; 1.583      ;
+; 1.314 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; ControlUnit:UnidadeDeControle|fsmstate[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.580      ;
+; 1.319 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[142][0]         ; clock        ; clock       ; 0.000        ; -0.006     ; 1.579      ;
+; 1.319 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[158][0]         ; clock        ; clock       ; 0.000        ; -0.006     ; 1.579      ;
+; 1.348 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[190][2]         ; clock        ; clock       ; 0.000        ; -0.005     ; 1.609      ;
+; 1.349 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[173][0]         ; clock        ; clock       ; 0.000        ; 0.006      ; 1.621      ;
+; 1.351 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[54][0]          ; clock        ; clock       ; 0.000        ; -0.010     ; 1.607      ;
+; 1.352 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[237][0]         ; clock        ; clock       ; 0.000        ; 0.006      ; 1.624      ;
+; 1.359 ; registrador:RegFile|rgf[2][6]             ; FF_TD_2:ffreg|Out2[6]                     ; clock        ; clock       ; 0.000        ; 0.005      ; 1.630      ;
+; 1.371 ; FF_TD_2:ffreg|Out2[5]                     ; MemRAM:DataMemory|memoria[116][5]         ; clock        ; clock       ; 0.000        ; -0.057     ; 1.580      ;
+; 1.374 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[190][3]         ; clock        ; clock       ; 0.000        ; -0.005     ; 1.635      ;
+; 1.377 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[82][7]          ; clock        ; clock       ; 0.000        ; -0.019     ; 1.624      ;
+; 1.381 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[254][0]         ; clock        ; clock       ; 0.000        ; -0.024     ; 1.623      ;
+; 1.384 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[86][7]          ; clock        ; clock       ; 0.000        ; -0.030     ; 1.620      ;
+; 1.390 ; FF_IR:ffir|Inst[20]                       ; FF_TD_2:ffreg|Out2[0]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.656      ;
+; 1.391 ; FF_IR:ffir|Inst[20]                       ; FF_TD_2:ffreg|Out2[3]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.657      ;
+; 1.391 ; registrador:RegFile|rgf[1][7]             ; FF_TD_2:ffreg|Out1[7]                     ; clock        ; clock       ; 0.000        ; 0.011      ; 1.668      ;
+; 1.394 ; registrador:RegFile|rgf[1][6]             ; FF_TD_2:ffreg|Out1[6]                     ; clock        ; clock       ; 0.000        ; 0.011      ; 1.671      ;
+; 1.394 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[238][7]         ; clock        ; clock       ; 0.000        ; -0.013     ; 1.647      ;
+; 1.395 ; FF_TD_2:ffreg|Out2[5]                     ; MemRAM:DataMemory|memoria[132][5]         ; clock        ; clock       ; 0.000        ; -0.005     ; 1.656      ;
+; 1.398 ; FF_PC:ffpc|PC[2]                          ; FF_IR:ffir|PCold[2]                       ; clock        ; clock       ; 0.000        ; 0.007      ; 1.671      ;
+; 1.398 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[142][3]         ; clock        ; clock       ; 0.000        ; -0.006     ; 1.658      ;
+; 1.399 ; registrador:RegFile|rgf[1][5]             ; FF_TD_2:ffreg|Out1[5]                     ; clock        ; clock       ; 0.000        ; 0.011      ; 1.676      ;
+; 1.400 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[76][0]          ; clock        ; clock       ; 0.000        ; -0.016     ; 1.650      ;
+; 1.400 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[108][0]         ; clock        ; clock       ; 0.000        ; -0.016     ; 1.650      ;
+; 1.400 ; FF_TD_2:ffreg|Out2[5]                     ; MemRAM:DataMemory|memoria[135][5]         ; clock        ; clock       ; 0.000        ; -0.005     ; 1.661      ;
+; 1.401 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[158][3]         ; clock        ; clock       ; 0.000        ; -0.006     ; 1.661      ;
+; 1.407 ; registrador:RegFile|rgf[1][0]             ; FF_TD_2:ffreg|Out1[0]                     ; clock        ; clock       ; 0.000        ; 0.011      ; 1.684      ;
+; 1.409 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[72][1]          ; clock        ; clock       ; 0.000        ; 0.011      ; 1.686      ;
+; 1.411 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[133][1]         ; clock        ; clock       ; 0.000        ; 0.004      ; 1.681      ;
+; 1.417 ; FF_PC:ffpc|PC[0]                          ; FF_IR:ffir|PCold[0]                       ; clock        ; clock       ; 0.000        ; 0.007      ; 1.690      ;
+; 1.424 ; FF_IR:ffir|Inst[21]                       ; FF_TD_2:ffreg|Out2[3]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.690      ;
+; 1.425 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[195][3]         ; clock        ; clock       ; 0.000        ; -0.020     ; 1.671      ;
+; 1.425 ; FF_IR:ffir|Inst[21]                       ; FF_TD_2:ffreg|Out2[0]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.691      ;
+; 1.429 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[194][3]         ; clock        ; clock       ; 0.000        ; -0.020     ; 1.675      ;
+; 1.432 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[135][2]         ; clock        ; clock       ; 0.000        ; -0.009     ; 1.689      ;
+; 1.436 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; ControlUnit:UnidadeDeControle|fsmstate[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.702      ;
+; 1.438 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[73][7]          ; clock        ; clock       ; 0.000        ; -0.027     ; 1.677      ;
+; 1.438 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[105][7]         ; clock        ; clock       ; 0.000        ; -0.027     ; 1.677      ;
+; 1.442 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[46][1]          ; clock        ; clock       ; 0.000        ; 0.006      ; 1.714      ;
+; 1.443 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[54][3]          ; clock        ; clock       ; 0.000        ; -0.010     ; 1.699      ;
+; 1.447 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[190][0]         ; clock        ; clock       ; 0.000        ; -0.005     ; 1.708      ;
+; 1.448 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[174][0]         ; clock        ; clock       ; 0.000        ; -0.005     ; 1.709      ;
+; 1.450 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[93][6]          ; clock        ; clock       ; 0.000        ; 0.006      ; 1.722      ;
+; 1.461 ; registrador:RegFile|rgf[1][3]             ; FF_TD_2:ffreg|Out1[3]                     ; clock        ; clock       ; 0.000        ; 0.011      ; 1.738      ;
+; 1.463 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[34][2]          ; clock        ; clock       ; 0.000        ; -0.001     ; 1.728      ;
+; 1.463 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[172][0]         ; clock        ; clock       ; 0.000        ; 0.002      ; 1.731      ;
+; 1.464 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[238][3]         ; clock        ; clock       ; 0.000        ; -0.017     ; 1.713      ;
+; 1.466 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[44][0]          ; clock        ; clock       ; 0.000        ; 0.002      ; 1.734      ;
+; 1.467 ; FF_TD_2:ffreg|Out2[4]                     ; MemRAM:DataMemory|memoria[44][4]          ; clock        ; clock       ; 0.000        ; 0.002      ; 1.735      ;
+; 1.470 ; FF_TD_2:ffreg|Out2[4]                     ; MemRAM:DataMemory|memoria[172][4]         ; clock        ; clock       ; 0.000        ; 0.002      ; 1.738      ;
+; 1.471 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[54][1]          ; clock        ; clock       ; 0.000        ; -0.006     ; 1.731      ;
+; 1.474 ; registrador:RegFile|rgf[2][7]             ; FF_TD_2:ffreg|Out1[7]                     ; clock        ; clock       ; 0.000        ; 0.011      ; 1.751      ;
+; 1.474 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[238][1]         ; clock        ; clock       ; 0.000        ; -0.013     ; 1.727      ;
+; 1.476 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; ControlUnit:UnidadeDeControle|fsmstate[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.742      ;
+; 1.479 ; FF_TD_2:ffreg|Out2[4]                     ; MemRAM:DataMemory|memoria[21][4]          ; clock        ; clock       ; 0.000        ; 0.004      ; 1.749      ;
+; 1.479 ; FF_TD_2:ffreg|Out2[4]                     ; MemRAM:DataMemory|memoria[29][4]          ; clock        ; clock       ; 0.000        ; 0.004      ; 1.749      ;
+; 1.485 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[254][3]         ; clock        ; clock       ; 0.000        ; -0.024     ; 1.727      ;
+; 1.485 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[165][0]         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.749      ;
+; 1.487 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[38][1]          ; clock        ; clock       ; 0.000        ; 0.004      ; 1.757      ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                    ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[11]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[11]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[13]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[13]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[15]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[15]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[16]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[16]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[20]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[20]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[21]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[21]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[22]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[22]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[24]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[24]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[30]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[30]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[8]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[8]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[9]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[9]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[0]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[0]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[1]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[1]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[2]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[2]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[3]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[3]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[4]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[4]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[5]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[5]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[6]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[6]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[7]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[7]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD_2:ffreg|Out1[0]                     ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst       ; clock      ; 12.239 ; 12.239 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst       ; clock      ; -1.125 ; -1.125 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; fsmstate[*]  ; clock      ; 8.530 ; 8.530 ; Rise       ; clock           ;
+;  fsmstate[0] ; clock      ; 7.218 ; 7.218 ; Rise       ; clock           ;
+;  fsmstate[1] ; clock      ; 8.530 ; 8.530 ; Rise       ; clock           ;
+;  fsmstate[2] ; clock      ; 7.932 ; 7.932 ; Rise       ; clock           ;
+;  fsmstate[3] ; clock      ; 7.555 ; 7.555 ; Rise       ; clock           ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; fsmstate[*]  ; clock      ; 7.218 ; 7.218 ; Rise       ; clock           ;
+;  fsmstate[0] ; clock      ; 7.218 ; 7.218 ; Rise       ; clock           ;
+;  fsmstate[1] ; clock      ; 8.530 ; 8.530 ; Rise       ; clock           ;
+;  fsmstate[2] ; clock      ; 7.932 ; 7.932 ; Rise       ; clock           ;
+;  fsmstate[3] ; clock      ; 7.555 ; 7.555 ; Rise       ; clock           ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -5.045 ; -8717.436     ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.269 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.380 ; -2170.380             ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock'                                                                                                                                    ;
++--------+-------------------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -5.045 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.017     ; 6.060      ;
+; -5.024 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.017     ; 6.039      ;
+; -4.979 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[253][2] ; clock        ; clock       ; 1.000        ; -0.047     ; 5.964      ;
+; -4.968 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.020     ; 5.980      ;
+; -4.958 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[253][2] ; clock        ; clock       ; 1.000        ; -0.047     ; 5.943      ;
+; -4.948 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.017     ; 5.963      ;
+; -4.947 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.020     ; 5.959      ;
+; -4.910 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.017     ; 5.925      ;
+; -4.900 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.023     ; 5.909      ;
+; -4.889 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[193][4] ; clock        ; clock       ; 1.000        ; -0.016     ; 5.905      ;
+; -4.886 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[2]               ; clock        ; clock       ; 1.000        ; -0.024     ; 5.894      ;
+; -4.882 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[253][2] ; clock        ; clock       ; 1.000        ; -0.047     ; 5.867      ;
+; -4.879 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.023     ; 5.888      ;
+; -4.874 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[7]               ; clock        ; clock       ; 1.000        ; 0.003      ; 5.909      ;
+; -4.871 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.020     ; 5.883      ;
+; -4.868 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[193][4] ; clock        ; clock       ; 1.000        ; -0.016     ; 5.884      ;
+; -4.865 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[2]               ; clock        ; clock       ; 1.000        ; -0.024     ; 5.873      ;
+; -4.853 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[7]               ; clock        ; clock       ; 1.000        ; 0.003      ; 5.888      ;
+; -4.845 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[4]               ; clock        ; clock       ; 1.000        ; -0.016     ; 5.861      ;
+; -4.844 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; MemRAM:DataMemory|memoria[253][2] ; clock        ; clock       ; 1.000        ; -0.047     ; 5.829      ;
+; -4.833 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[3]               ; clock        ; clock       ; 1.000        ; -0.020     ; 5.845      ;
+; -4.831 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[55][5]  ; clock        ; clock       ; 1.000        ; -0.032     ; 5.831      ;
+; -4.824 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[4]               ; clock        ; clock       ; 1.000        ; -0.016     ; 5.840      ;
+; -4.821 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[1]               ; clock        ; clock       ; 1.000        ; 0.004      ; 5.857      ;
+; -4.818 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[193][5] ; clock        ; clock       ; 1.000        ; -0.034     ; 5.816      ;
+; -4.810 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[55][5]  ; clock        ; clock       ; 1.000        ; -0.032     ; 5.810      ;
+; -4.808 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.023     ; 5.817      ;
+; -4.802 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; FF_TD:ffdata|Out[0]               ; clock        ; clock       ; 1.000        ; -0.021     ; 5.813      ;
+; -4.800 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[1]               ; clock        ; clock       ; 1.000        ; 0.004      ; 5.836      ;
+; -4.797 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[193][5] ; clock        ; clock       ; 1.000        ; -0.034     ; 5.795      ;
+; -4.792 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[193][4] ; clock        ; clock       ; 1.000        ; -0.016     ; 5.808      ;
+; -4.789 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[2]               ; clock        ; clock       ; 1.000        ; -0.024     ; 5.797      ;
+; -4.782 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[7]               ; clock        ; clock       ; 1.000        ; 0.003      ; 5.817      ;
+; -4.781 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; FF_TD:ffdata|Out[0]               ; clock        ; clock       ; 1.000        ; -0.021     ; 5.792      ;
+; -4.765 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[5]               ; clock        ; clock       ; 1.000        ; -0.023     ; 5.774      ;
+; -4.754 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; MemRAM:DataMemory|memoria[193][4] ; clock        ; clock       ; 1.000        ; -0.016     ; 5.770      ;
+; -4.753 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[4]               ; clock        ; clock       ; 1.000        ; -0.016     ; 5.769      ;
+; -4.751 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[2]               ; clock        ; clock       ; 1.000        ; -0.024     ; 5.759      ;
+; -4.748 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[217][1] ; clock        ; clock       ; 1.000        ; -0.017     ; 5.763      ;
+; -4.747 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[25][7]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.762      ;
+; -4.747 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[25][1]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.762      ;
+; -4.747 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[25][0]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.762      ;
+; -4.747 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[25][4]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.762      ;
+; -4.739 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[7]               ; clock        ; clock       ; 1.000        ; 0.003      ; 5.774      ;
+; -4.734 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[55][5]  ; clock        ; clock       ; 1.000        ; -0.032     ; 5.734      ;
+; -4.731 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[26][7]  ; clock        ; clock       ; 1.000        ; -0.009     ; 5.754      ;
+; -4.729 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[1]               ; clock        ; clock       ; 1.000        ; 0.004      ; 5.765      ;
+; -4.728 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[177][1] ; clock        ; clock       ; 1.000        ; -0.012     ; 5.748      ;
+; -4.728 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[177][3] ; clock        ; clock       ; 1.000        ; -0.012     ; 5.748      ;
+; -4.728 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[177][6] ; clock        ; clock       ; 1.000        ; -0.012     ; 5.748      ;
+; -4.727 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[217][1] ; clock        ; clock       ; 1.000        ; -0.017     ; 5.742      ;
+; -4.726 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[25][7]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.741      ;
+; -4.726 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[25][1]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.741      ;
+; -4.726 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[25][0]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.741      ;
+; -4.726 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[25][4]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.741      ;
+; -4.721 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[193][5] ; clock        ; clock       ; 1.000        ; -0.034     ; 5.719      ;
+; -4.713 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[239][6] ; clock        ; clock       ; 1.000        ; -0.006     ; 5.739      ;
+; -4.711 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; FF_TD:ffdata|Out[0]               ; clock        ; clock       ; 1.000        ; -0.021     ; 5.722      ;
+; -4.710 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[3][1]   ; clock        ; clock       ; 1.000        ; -0.019     ; 5.723      ;
+; -4.710 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[3][6]   ; clock        ; clock       ; 1.000        ; -0.019     ; 5.723      ;
+; -4.710 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[4]               ; clock        ; clock       ; 1.000        ; -0.016     ; 5.726      ;
+; -4.710 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[26][7]  ; clock        ; clock       ; 1.000        ; -0.009     ; 5.733      ;
+; -4.707 ; FF_IR:ffir|Inst[20]                       ; FF_TD:ffdata|Out[6]               ; clock        ; clock       ; 1.000        ; -0.015     ; 5.724      ;
+; -4.707 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[177][1] ; clock        ; clock       ; 1.000        ; -0.012     ; 5.727      ;
+; -4.707 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[177][3] ; clock        ; clock       ; 1.000        ; -0.012     ; 5.727      ;
+; -4.707 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[177][6] ; clock        ; clock       ; 1.000        ; -0.012     ; 5.727      ;
+; -4.704 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[42][7]  ; clock        ; clock       ; 1.000        ; -0.022     ; 5.714      ;
+; -4.704 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[42][0]  ; clock        ; clock       ; 1.000        ; -0.022     ; 5.714      ;
+; -4.704 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[42][5]  ; clock        ; clock       ; 1.000        ; -0.022     ; 5.714      ;
+; -4.696 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; MemRAM:DataMemory|memoria[55][5]  ; clock        ; clock       ; 1.000        ; -0.032     ; 5.696      ;
+; -4.692 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[239][6] ; clock        ; clock       ; 1.000        ; -0.006     ; 5.718      ;
+; -4.689 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[3][1]   ; clock        ; clock       ; 1.000        ; -0.019     ; 5.702      ;
+; -4.689 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[3][6]   ; clock        ; clock       ; 1.000        ; -0.019     ; 5.702      ;
+; -4.686 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[1]               ; clock        ; clock       ; 1.000        ; 0.004      ; 5.722      ;
+; -4.683 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[204][6] ; clock        ; clock       ; 1.000        ; -0.044     ; 5.671      ;
+; -4.683 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; MemRAM:DataMemory|memoria[193][5] ; clock        ; clock       ; 1.000        ; -0.034     ; 5.681      ;
+; -4.683 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[42][7]  ; clock        ; clock       ; 1.000        ; -0.022     ; 5.693      ;
+; -4.683 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[42][0]  ; clock        ; clock       ; 1.000        ; -0.022     ; 5.693      ;
+; -4.683 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[42][5]  ; clock        ; clock       ; 1.000        ; -0.022     ; 5.693      ;
+; -4.668 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[11][1]  ; clock        ; clock       ; 1.000        ; -0.019     ; 5.681      ;
+; -4.667 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[91][7]  ; clock        ; clock       ; 1.000        ; 0.004      ; 5.703      ;
+; -4.667 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[85][6]  ; clock        ; clock       ; 1.000        ; -0.027     ; 5.672      ;
+; -4.667 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; FF_TD:ffdata|Out[0]               ; clock        ; clock       ; 1.000        ; -0.021     ; 5.678      ;
+; -4.662 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[133][5] ; clock        ; clock       ; 1.000        ; -0.016     ; 5.678      ;
+; -4.662 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[204][6] ; clock        ; clock       ; 1.000        ; -0.044     ; 5.650      ;
+; -4.651 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[217][1] ; clock        ; clock       ; 1.000        ; -0.017     ; 5.666      ;
+; -4.650 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[25][7]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.665      ;
+; -4.650 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[25][1]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.665      ;
+; -4.650 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[25][0]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.665      ;
+; -4.650 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; MemRAM:DataMemory|memoria[25][4]  ; clock        ; clock       ; 1.000        ; -0.017     ; 5.665      ;
+; -4.647 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[11][1]  ; clock        ; clock       ; 1.000        ; -0.019     ; 5.660      ;
+; -4.646 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[91][7]  ; clock        ; clock       ; 1.000        ; 0.004      ; 5.682      ;
+; -4.646 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[85][6]  ; clock        ; clock       ; 1.000        ; -0.027     ; 5.651      ;
+; -4.643 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[96][2]  ; clock        ; clock       ; 1.000        ; -0.011     ; 5.664      ;
+; -4.643 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[12][0]  ; clock        ; clock       ; 1.000        ; -0.019     ; 5.656      ;
+; -4.643 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[96][4]  ; clock        ; clock       ; 1.000        ; -0.011     ; 5.664      ;
+; -4.643 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[96][6]  ; clock        ; clock       ; 1.000        ; -0.011     ; 5.664      ;
+; -4.641 ; FF_IR:ffir|Inst[20]                       ; MemRAM:DataMemory|memoria[253][2] ; clock        ; clock       ; 1.000        ; -0.045     ; 5.628      ;
+; -4.641 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; MemRAM:DataMemory|memoria[133][5] ; clock        ; clock       ; 1.000        ; -0.016     ; 5.657      ;
+; -4.639 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; MemRAM:DataMemory|memoria[242][2] ; clock        ; clock       ; 1.000        ; -0.048     ; 5.623      ;
++--------+-------------------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock'                                                                                                                                            ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.269 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; ControlUnit:UnidadeDeControle|fsmstate[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.421      ;
+; 0.327 ; FF_PC:ffpc|PC[5]                          ; FF_IR:ffir|PCold[5]                       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.479      ;
+; 0.333 ; FF_PC:ffpc|PC[7]                          ; FF_IR:ffir|PCold[7]                       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.485      ;
+; 0.378 ; registrador:RegFile|rgf[3][7]             ; FF_TD_2:ffreg|Out2[7]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.530      ;
+; 0.401 ; ControlUnit:UnidadeDeControle|fsmstate[2] ; ControlUnit:UnidadeDeControle|fsmstate[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.553      ;
+; 0.438 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[102][1]         ; clock        ; clock       ; 0.000        ; -0.001     ; 0.589      ;
+; 0.440 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[98][1]          ; clock        ; clock       ; 0.000        ; -0.001     ; 0.591      ;
+; 0.454 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[148][1]         ; clock        ; clock       ; 0.000        ; -0.005     ; 0.601      ;
+; 0.490 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[102][7]         ; clock        ; clock       ; 0.000        ; -0.001     ; 0.641      ;
+; 0.493 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[78][7]          ; clock        ; clock       ; 0.000        ; -0.001     ; 0.644      ;
+; 0.498 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[44][6]          ; clock        ; clock       ; 0.000        ; 0.006      ; 0.656      ;
+; 0.502 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[25][0]          ; clock        ; clock       ; 0.000        ; -0.015     ; 0.639      ;
+; 0.504 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[172][6]         ; clock        ; clock       ; 0.000        ; 0.006      ; 0.662      ;
+; 0.513 ; FF_PC:ffpc|PC[1]                          ; FF_IR:ffir|PCold[1]                       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.665      ;
+; 0.515 ; registrador:RegFile|rgf[3][5]             ; FF_TD_2:ffreg|Out2[5]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.667      ;
+; 0.516 ; registrador:RegFile|rgf[3][1]             ; FF_TD_2:ffreg|Out2[1]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.668      ;
+; 0.534 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[132][3]         ; clock        ; clock       ; 0.000        ; -0.001     ; 0.685      ;
+; 0.536 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[133][3]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.688      ;
+; 0.536 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[164][3]         ; clock        ; clock       ; 0.000        ; -0.001     ; 0.687      ;
+; 0.540 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[133][2]         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.692      ;
+; 0.546 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[108][1]         ; clock        ; clock       ; 0.000        ; 0.004      ; 0.702      ;
+; 0.554 ; FF_PC:ffpc|PC[3]                          ; FF_IR:ffir|PCold[3]                       ; clock        ; clock       ; 0.000        ; -0.002     ; 0.704      ;
+; 0.560 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[164][0]         ; clock        ; clock       ; 0.000        ; -0.001     ; 0.711      ;
+; 0.563 ; FF_IR:ffir|Inst[21]                       ; FF_TD_2:ffreg|Out2[4]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.715      ;
+; 0.568 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[174][1]         ; clock        ; clock       ; 0.000        ; -0.001     ; 0.719      ;
+; 0.570 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[190][1]         ; clock        ; clock       ; 0.000        ; -0.001     ; 0.721      ;
+; 0.571 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[174][6]         ; clock        ; clock       ; 0.000        ; 0.006      ; 0.729      ;
+; 0.574 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[32][6]          ; clock        ; clock       ; 0.000        ; 0.008      ; 0.734      ;
+; 0.575 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[50][2]          ; clock        ; clock       ; 0.000        ; -0.024     ; 0.703      ;
+; 0.575 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[46][6]          ; clock        ; clock       ; 0.000        ; 0.006      ; 0.733      ;
+; 0.575 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[36][6]          ; clock        ; clock       ; 0.000        ; 0.008      ; 0.735      ;
+; 0.576 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[34][1]          ; clock        ; clock       ; 0.000        ; 0.010      ; 0.738      ;
+; 0.582 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[132][2]         ; clock        ; clock       ; 0.000        ; -0.001     ; 0.733      ;
+; 0.584 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[32][1]          ; clock        ; clock       ; 0.000        ; 0.008      ; 0.744      ;
+; 0.584 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[36][1]          ; clock        ; clock       ; 0.000        ; 0.008      ; 0.744      ;
+; 0.588 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[65][1]          ; clock        ; clock       ; 0.000        ; 0.010      ; 0.750      ;
+; 0.589 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[192][2]         ; clock        ; clock       ; 0.000        ; -0.024     ; 0.717      ;
+; 0.589 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[1][1]           ; clock        ; clock       ; 0.000        ; 0.010      ; 0.751      ;
+; 0.590 ; registrador:RegFile|rgf[3][2]             ; FF_TD_2:ffreg|Out1[2]                     ; clock        ; clock       ; 0.000        ; 0.005      ; 0.747      ;
+; 0.595 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[233][3]         ; clock        ; clock       ; 0.000        ; -0.020     ; 0.727      ;
+; 0.605 ; ControlUnit:UnidadeDeControle|fsmstate[3] ; ControlUnit:UnidadeDeControle|fsmstate[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.757      ;
+; 0.611 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[167][0]         ; clock        ; clock       ; 0.000        ; 0.004      ; 0.767      ;
+; 0.625 ; FF_IR:ffir|Inst[20]                       ; FF_TD_2:ffreg|Out2[3]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.777      ;
+; 0.625 ; FF_IR:ffir|Inst[20]                       ; FF_TD_2:ffreg|Out2[0]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.777      ;
+; 0.632 ; FF_IR:ffir|Inst[21]                       ; FF_TD_2:ffreg|Out2[3]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.784      ;
+; 0.633 ; FF_IR:ffir|Inst[21]                       ; FF_TD_2:ffreg|Out2[0]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.785      ;
+; 0.634 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[173][0]         ; clock        ; clock       ; 0.000        ; 0.005      ; 0.791      ;
+; 0.635 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[237][0]         ; clock        ; clock       ; 0.000        ; 0.005      ; 0.792      ;
+; 0.638 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[54][0]          ; clock        ; clock       ; 0.000        ; -0.010     ; 0.780      ;
+; 0.638 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[142][0]         ; clock        ; clock       ; 0.000        ; -0.006     ; 0.784      ;
+; 0.638 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[158][0]         ; clock        ; clock       ; 0.000        ; -0.006     ; 0.784      ;
+; 0.646 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[190][2]         ; clock        ; clock       ; 0.000        ; -0.005     ; 0.793      ;
+; 0.649 ; ControlUnit:UnidadeDeControle|fsmstate[1] ; ControlUnit:UnidadeDeControle|fsmstate[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.801      ;
+; 0.658 ; FF_PC:ffpc|PC[2]                          ; FF_IR:ffir|PCold[2]                       ; clock        ; clock       ; 0.000        ; 0.006      ; 0.816      ;
+; 0.658 ; registrador:RegFile|rgf[2][6]             ; FF_TD_2:ffreg|Out2[6]                     ; clock        ; clock       ; 0.000        ; 0.005      ; 0.815      ;
+; 0.659 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[190][3]         ; clock        ; clock       ; 0.000        ; -0.005     ; 0.806      ;
+; 0.660 ; registrador:RegFile|rgf[1][7]             ; FF_TD_2:ffreg|Out1[7]                     ; clock        ; clock       ; 0.000        ; 0.010      ; 0.822      ;
+; 0.660 ; FF_TD_2:ffreg|Out2[5]                     ; MemRAM:DataMemory|memoria[132][5]         ; clock        ; clock       ; 0.000        ; -0.004     ; 0.808      ;
+; 0.662 ; registrador:RegFile|rgf[1][6]             ; FF_TD_2:ffreg|Out1[6]                     ; clock        ; clock       ; 0.000        ; 0.010      ; 0.824      ;
+; 0.665 ; registrador:RegFile|rgf[1][5]             ; FF_TD_2:ffreg|Out1[5]                     ; clock        ; clock       ; 0.000        ; 0.010      ; 0.827      ;
+; 0.665 ; FF_TD_2:ffreg|Out2[5]                     ; MemRAM:DataMemory|memoria[135][5]         ; clock        ; clock       ; 0.000        ; -0.004     ; 0.813      ;
+; 0.666 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[254][0]         ; clock        ; clock       ; 0.000        ; -0.023     ; 0.795      ;
+; 0.667 ; registrador:RegFile|rgf[2][7]             ; FF_TD_2:ffreg|Out1[7]                     ; clock        ; clock       ; 0.000        ; 0.010      ; 0.829      ;
+; 0.667 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[133][1]         ; clock        ; clock       ; 0.000        ; 0.004      ; 0.823      ;
+; 0.669 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[72][1]          ; clock        ; clock       ; 0.000        ; 0.010      ; 0.831      ;
+; 0.669 ; FF_PC:ffpc|PC[0]                          ; FF_IR:ffir|PCold[0]                       ; clock        ; clock       ; 0.000        ; 0.006      ; 0.827      ;
+; 0.670 ; FF_TD_2:ffreg|Out2[5]                     ; MemRAM:DataMemory|memoria[116][5]         ; clock        ; clock       ; 0.000        ; -0.051     ; 0.771      ;
+; 0.670 ; registrador:RegFile|rgf[1][0]             ; FF_TD_2:ffreg|Out1[0]                     ; clock        ; clock       ; 0.000        ; 0.010      ; 0.832      ;
+; 0.671 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[238][7]         ; clock        ; clock       ; 0.000        ; -0.012     ; 0.811      ;
+; 0.673 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[142][3]         ; clock        ; clock       ; 0.000        ; -0.006     ; 0.819      ;
+; 0.674 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[76][0]          ; clock        ; clock       ; 0.000        ; -0.015     ; 0.811      ;
+; 0.675 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[158][3]         ; clock        ; clock       ; 0.000        ; -0.006     ; 0.821      ;
+; 0.675 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[108][0]         ; clock        ; clock       ; 0.000        ; -0.015     ; 0.812      ;
+; 0.677 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[82][7]          ; clock        ; clock       ; 0.000        ; -0.018     ; 0.811      ;
+; 0.678 ; registrador:RegFile|rgf[2][0]             ; FF_TD_2:ffreg|Out1[0]                     ; clock        ; clock       ; 0.000        ; 0.010      ; 0.840      ;
+; 0.679 ; ControlUnit:UnidadeDeControle|fsmstate[0] ; ControlUnit:UnidadeDeControle|fsmstate[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.831      ;
+; 0.682 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[135][2]         ; clock        ; clock       ; 0.000        ; -0.008     ; 0.826      ;
+; 0.685 ; FF_TD_2:ffreg|Out2[6]                     ; MemRAM:DataMemory|memoria[93][6]          ; clock        ; clock       ; 0.000        ; 0.005      ; 0.842      ;
+; 0.689 ; FF_TD_2:ffreg|Out2[7]                     ; MemRAM:DataMemory|memoria[86][7]          ; clock        ; clock       ; 0.000        ; -0.028     ; 0.813      ;
+; 0.694 ; registrador:RegFile|rgf[2][2]             ; FF_TD_2:ffreg|Out1[2]                     ; clock        ; clock       ; 0.000        ; 0.010      ; 0.856      ;
+; 0.695 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[54][3]          ; clock        ; clock       ; 0.000        ; -0.010     ; 0.837      ;
+; 0.696 ; registrador:RegFile|rgf[2][6]             ; FF_TD_2:ffreg|Out1[6]                     ; clock        ; clock       ; 0.000        ; 0.010      ; 0.858      ;
+; 0.696 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[195][3]         ; clock        ; clock       ; 0.000        ; -0.018     ; 0.830      ;
+; 0.697 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[194][3]         ; clock        ; clock       ; 0.000        ; -0.018     ; 0.831      ;
+; 0.697 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[172][0]         ; clock        ; clock       ; 0.000        ; 0.002      ; 0.851      ;
+; 0.697 ; registrador:RegFile|rgf[3][7]             ; FF_TD_2:ffreg|Out1[7]                     ; clock        ; clock       ; 0.000        ; 0.005      ; 0.854      ;
+; 0.699 ; FF_TD_2:ffreg|Out2[4]                     ; MemRAM:DataMemory|memoria[172][4]         ; clock        ; clock       ; 0.000        ; 0.002      ; 0.853      ;
+; 0.700 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[44][0]          ; clock        ; clock       ; 0.000        ; 0.002      ; 0.854      ;
+; 0.700 ; FF_TD_2:ffreg|Out2[4]                     ; MemRAM:DataMemory|memoria[44][4]          ; clock        ; clock       ; 0.000        ; 0.002      ; 0.854      ;
+; 0.701 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[46][1]          ; clock        ; clock       ; 0.000        ; 0.006      ; 0.859      ;
+; 0.704 ; registrador:RegFile|rgf[1][3]             ; FF_TD_2:ffreg|Out1[3]                     ; clock        ; clock       ; 0.000        ; 0.010      ; 0.866      ;
+; 0.706 ; registrador:RegFile|rgf[2][5]             ; FF_TD_2:ffreg|Out1[5]                     ; clock        ; clock       ; 0.000        ; 0.010      ; 0.868      ;
+; 0.708 ; FF_TD_2:ffreg|Out2[2]                     ; MemRAM:DataMemory|memoria[34][2]          ; clock        ; clock       ; 0.000        ; -0.001     ; 0.859      ;
+; 0.708 ; FF_TD_2:ffreg|Out2[1]                     ; MemRAM:DataMemory|memoria[54][1]          ; clock        ; clock       ; 0.000        ; -0.006     ; 0.854      ;
+; 0.708 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[100][3]         ; clock        ; clock       ; 0.000        ; -0.009     ; 0.851      ;
+; 0.710 ; FF_TD_2:ffreg|Out2[0]                     ; MemRAM:DataMemory|memoria[233][0]         ; clock        ; clock       ; 0.000        ; -0.020     ; 0.842      ;
+; 0.710 ; FF_TD_2:ffreg|Out2[4]                     ; MemRAM:DataMemory|memoria[21][4]          ; clock        ; clock       ; 0.000        ; 0.004      ; 0.866      ;
+; 0.710 ; FF_TD_2:ffreg|Out2[4]                     ; MemRAM:DataMemory|memoria[29][4]          ; clock        ; clock       ; 0.000        ; 0.004      ; 0.866      ;
+; 0.712 ; registrador:RegFile|rgf[2][4]             ; FF_TD_2:ffreg|Out1[4]                     ; clock        ; clock       ; 0.000        ; 0.010      ; 0.874      ;
+; 0.713 ; FF_TD_2:ffreg|Out2[3]                     ; MemRAM:DataMemory|memoria[238][3]         ; clock        ; clock       ; 0.000        ; -0.016     ; 0.849      ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                    ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; ControlUnit:UnidadeDeControle|fsmstate[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[11]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[11]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[13]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[13]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[15]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[15]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[16]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[16]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[20]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[20]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[21]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[21]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[22]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[22]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[24]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[24]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[30]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[30]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[8]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[8]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|Inst[9]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|Inst[9]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_IR:ffir|PCold[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_IR:ffir|PCold[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[0]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[0]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[1]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[1]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[2]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[2]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[3]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[3]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[4]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[4]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[5]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[5]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[6]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[6]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_PC:ffpc|PC[7]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_PC:ffpc|PC[7]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[0]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[1]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[2]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[3]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[4]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[5]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[6]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffdata|Out[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffdata|Out[7]                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[4]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[5]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[6]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD:ffula|Out[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; FF_TD:ffula|Out[7]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; FF_TD_2:ffreg|Out1[0]                     ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clock      ; 5.111 ; 5.111 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst       ; clock      ; -0.210 ; -0.210 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; fsmstate[*]  ; clock      ; 4.672 ; 4.672 ; Rise       ; clock           ;
+;  fsmstate[0] ; clock      ; 4.092 ; 4.092 ; Rise       ; clock           ;
+;  fsmstate[1] ; clock      ; 4.672 ; 4.672 ; Rise       ; clock           ;
+;  fsmstate[2] ; clock      ; 4.380 ; 4.380 ; Rise       ; clock           ;
+;  fsmstate[3] ; clock      ; 4.222 ; 4.222 ; Rise       ; clock           ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; fsmstate[*]  ; clock      ; 4.092 ; 4.092 ; Rise       ; clock           ;
+;  fsmstate[0] ; clock      ; 4.092 ; 4.092 ; Rise       ; clock           ;
+;  fsmstate[1] ; clock      ; 4.672 ; 4.672 ; Rise       ; clock           ;
+;  fsmstate[2] ; clock      ; 4.380 ; 4.380 ; Rise       ; clock           ;
+;  fsmstate[3] ; clock      ; 4.222 ; 4.222 ; Rise       ; clock           ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++------------------+------------+-------+----------+---------+---------------------+
+; Clock            ; Setup      ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+------------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -12.616    ; 0.269 ; N/A      ; N/A     ; -1.380              ;
+;  clock           ; -12.616    ; 0.269 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -21755.08  ; 0.0   ; 0.0      ; 0.0     ; -2170.38            ;
+;  clock           ; -21755.080 ; 0.000 ; N/A      ; N/A     ; -2170.380           ;
++------------------+------------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst       ; clock      ; 12.239 ; 12.239 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst       ; clock      ; -0.210 ; -0.210 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; fsmstate[*]  ; clock      ; 8.530 ; 8.530 ; Rise       ; clock           ;
+;  fsmstate[0] ; clock      ; 7.218 ; 7.218 ; Rise       ; clock           ;
+;  fsmstate[1] ; clock      ; 8.530 ; 8.530 ; Rise       ; clock           ;
+;  fsmstate[2] ; clock      ; 7.932 ; 7.932 ; Rise       ; clock           ;
+;  fsmstate[3] ; clock      ; 7.555 ; 7.555 ; Rise       ; clock           ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; fsmstate[*]  ; clock      ; 4.092 ; 4.092 ; Rise       ; clock           ;
+;  fsmstate[0] ; clock      ; 4.092 ; 4.092 ; Rise       ; clock           ;
+;  fsmstate[1] ; clock      ; 4.672 ; 4.672 ; Rise       ; clock           ;
+;  fsmstate[2] ; clock      ; 4.380 ; 4.380 ; Rise       ; clock           ;
+;  fsmstate[3] ; clock      ; 4.222 ; 4.222 ; Rise       ; clock           ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 9206009  ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 9206009  ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 2169  ; 2169 ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue May 14 20:25:57 2024
+Info: Command: quartus_sta Mod_Teste -c Mod_Teste
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Mod_Teste.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -12.616
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -12.616    -21755.080 clock 
+Info (332146): Worst-case hold slack is 0.578
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.578         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380     -2170.380 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.045
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.045     -8717.436 clock 
+Info (332146): Worst-case hold slack is 0.269
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.269         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380     -2170.380 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4587 megabytes
+    Info: Processing ended: Tue May 14 20:25:59 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
